@@ -1,6 +1,7 @@
-from django.apps import AppConfig
+from django.shortcuts import render
 
+def task_list(request):
+    return render(request, 'todo/task_list.html')
 
-class TodoAppConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'todo_app'
+def add_task(request):
+    return render(request, 'todo/add_task.html')
