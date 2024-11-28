@@ -5,4 +5,3 @@ def task_list(request):
 
 def add_task(request):
     return render(request, 'todo/add_task.html')
-s
