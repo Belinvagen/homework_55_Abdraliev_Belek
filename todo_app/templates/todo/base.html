@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Список задач{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'task_list' %}">Главная</a></li>
+                <li><a href="{% url 'task_add' %}">Добавить задачу</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Все права защищены</p>
+    </footer>
+
+</body>
+</html>

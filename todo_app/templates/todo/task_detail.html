@@ -1,0 +1,13 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}Детальный просмотр задачи{% endblock %}
+
+{% block content %}
+    <h1>Детальная информация о задаче</h1>
+    <p><strong>Описание:</strong> {{ task.description }}</p>
+    <p><strong>Статус:</strong> {{ task.get_status_display }}</p>
+    <p><strong>Дата выполнения:</strong> {{ task.due_date }}</p>
+    <p><strong>Подробное описание:</strong> {{ task.details }}</p>
+
+    <a href="{% url 'task_list' %}">Назад к списку задач</a>
+{% endblock %}
