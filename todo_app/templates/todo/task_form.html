@@ -1,13 +1,17 @@
 <form method="post">
     {% csrf_token %}
     <label for="description">Описание:</label>
-    <input type="text" id="description" name="description" value="{{ form.description.value }}">
-    <br>
+    <input type="text" name="description" id="description"><br>
+
     <label for="status">Статус:</label>
-    {{ form.status }}
-    <br>
+    <select name="status" id="status">
+        <option value="new">Новая</option>
+        <option value="in_progress">В процессе</option>
+        <option value="done">Сделано</option>
+    </select><br>
+
     <label for="due_date">Дата выполнения:</label>
-    <input type="text" id="due_date" name="due_date" value="{{ form.due_date.value }}">
-    <br>
-    <button type="submit">{{ button_text }}</button>
+    <input type="text" name="due_date" id="due_date" placeholder="YYYY-MM-DD"><br>
+
+    <button type="submit">Добавить</button>
 </form>
